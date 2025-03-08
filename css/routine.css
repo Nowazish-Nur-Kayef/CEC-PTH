@@ -1,0 +1,310 @@
+/* Routine Page Styles */
+
+/* Hero Section */
+.routine-hero {
+    background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.9)),
+                url(' ../images/herosecbg1.gif');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    color: var(--light);
+    margin-top: 40px;
+}
+
+.routine-hero-content {
+    text-align: center;
+}
+
+.routine-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.routine-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Routine Controls */
+.routine-controls {
+    padding: 2rem 0;
+    background: var(--light);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.routine-select {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--dark);
+    min-width: 200px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.routine-select:hover,
+.routine-select:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.routine-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* PDF Viewer Section */
+.routine-viewer {
+    padding: 4rem 0;
+    background: var(--light-bg);
+}
+
+.viewer-wrapper {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.pdf-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: var(--light);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-icon:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.pdf-container {
+    width: 100%;
+    height: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+/* Routine Info Section */
+.routine-info {
+    padding: 6rem 0;
+    background: var(--white);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    padding: 2rem;
+    background: var(--light);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-card li {
+    margin-bottom: 0.5rem;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-card li::before {
+    content: '•';
+    color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .routine-hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .pdf-container {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .controls-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .routine-select {
+        width: 100%;
+    }
+
+    .routine-actions {
+        flex-direction: column;
+    }
+
+    .routine-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .pdf-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .routine-hero {
+        height: 250px;
+    }
+
+    .routine-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .pdf-container {
+        height: 300px;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .routine-controls,
+    .pdf-controls,
+    .routine-info {
+        display: none;
+    }
+
+    .pdf-container {
+        border: none;
+    }
+
+    .viewer-wrapper {
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+/* Loading State */
+.pdf-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background: var(--light);
+}
+
+.pdf-loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--primary);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.pdf-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    background: var(--light);
+    color: var(--error);
+    text-align: center;
+    padding: 2rem;
+}
+
+.pdf-error i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+/* Reading Progress Bar */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary);
+    z-index: 1000;
+    transition: width 0.1s;
+}
