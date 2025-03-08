@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="cec.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="CXPF8xI_7TdB46UGQS2RQLwBQetmC8fQ9R6vOcdOuaI" />
+    <title>404 Not Found</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {  
+            height: 100%;
+            background: url(' ../images/errorbg.png') no-repeat center center fixed;
+            background-size: cover;  
+            overflow: hidden;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .text {
+            text-align: center; 
+            position: relative;
+        }
+
+        h1, h2, h3, .btn {
+            transition: transform 0.1s ease; /* Smooth transition for parallax effect */
+        }
+
+        h1 {
+            color: #011718;
+            font-size: 15em;
+            text-shadow: -5px 5px 0px rgba(0,0,0,0.7), -10px 10px 0px rgba(0,0,0,0.4), -15px 15px 0px rgba(0,0,0,0.2);
+            font-family: monospace;
+            font-weight: bold;
+            margin: 0;
+            animation: fadeInDown 2s ease-in-out;
+        }
+
+        h2 {
+            color: black;
+            font-size: 5em;
+            text-shadow: -5px 5px 0px rgba(0,0,0,0.7);
+            margin: 0;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        h3 {
+            color: white;
+            font-size: 2em;
+            text-shadow: -5px 5px 0px rgba(0,0,0,0.7);
+            margin: 0;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: black;
+            padding: 1rem 2rem;
+            border: 1px solid transparent;
+            border-radius: 10rem;
+            font-weight: 500;
+            transition: 400ms ease-in-out;
+            margin-top: 20px;
+            animation: bounce 1.5s infinite;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 10em;
+            }
+            h2 {
+                font-size: 3em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+            .btn {
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 6em;
+            }
+            h2 {
+                font-size: 2.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            .btn {
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        <h1>404</h1>
+        <h2>Oops! Page Not <span style="color: rgb(37, 36, 36);">Found</span></h2>
+        <h3>The page you are looking for doesn't exist or has been moved.</h3>
+        <a href="https://cec2010.vercel.app" class="btn">Go Home</a>
+    </div>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            const moveX = (x - 0.5) * 30; // Base movement for all elements
+            const moveY = (y - 0.5) * 30; // Base movement for all elements
+
+            const elements = [
+                { selector: 'h1', depth: 1 },  // H1 moves less
+                { selector: 'h2', depth: 3 }, // H2 moves moderately
+                { selector: 'h3', depth: 5 }, // H3 moves more
+                { selector: '.btn', depth: 20 } // Button moves the most
+            ];
+
+            elements.forEach(({ selector, depth }) => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.style.transform = `translate(${moveX / depth}px, ${moveY / depth}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
