@@ -15,4 +15,4 @@ This is the official website of [Choton's English Care](https://cec2010.vercel.a
 
 ## About the coaching center
 
-The director of this coaching center is respected **Choton Dey** sir. This website is developed by [Nowazish Nure Kayef](https://github.com/Nowazish-Nur-Kayef).
+The director of this coaching center is respected **Choton Dey** sir. This website is developed and maintained by [Nowazish Nure Kayef](https://github.com/Nowazish-Nur-Kayef).
