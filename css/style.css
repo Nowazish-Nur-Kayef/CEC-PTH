@@ -156,6 +156,9 @@ a {
 .nav-menu a.active::after {
     width: 100%;
 }
+.nav-menu a:nth-child(5):hover::after{
+    width: 0;
+}
 
 .nav-cta {
     background: var(--primary);
